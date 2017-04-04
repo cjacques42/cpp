@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 OBJ_PATH = obj/
 SHELL = /bin/bash
 
-SRC_NAME =	megaphone.cpp
+SRC_NAME =	main.cpp
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))

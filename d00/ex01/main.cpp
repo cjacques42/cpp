@@ -6,10 +6,8 @@ int		main(void)
 	int				i = 0;
 	std::string		buf;
 
-	while (true)
+	while (std::cout << ">$" && std::getline(std::cin, buf))
 	{
-		std::cout << ">$";
-		std::getline(std::cin, buf);
 		if (buf == "ADD")
 		{
 			if (i < 8)
@@ -25,5 +23,6 @@ int		main(void)
 		else if (buf == "EXIT")
 			return (0);
 	}
+	std::cout << std::endl;
 	return (0);
 }
