@@ -3,13 +3,15 @@
 
 void		ponyOnTheHeap(void)
 {
-	Pony	*heap = new Pony("Heap");
+	Pony	*heap = new Pony("Heap", "black");
+	heap->drink();
 	delete heap;
 }
 
 void		ponyOnTheStack(void)
 {
-	Pony	stack = Pony("Stack");
+	Pony	stack = Pony("Stack", "white");
+	stack.drink();
 }
 
 int			main()
