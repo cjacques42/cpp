@@ -1,10 +1,8 @@
 #include "ZombieEvent.hpp"
-#include "Zombie.hpp"
-#include <iostream>
-#include <cstdlib>
 
 ZombieEvent::ZombieEvent(void) {
 	std::cout << "ZombieEvent: created" << std::endl;
+	srand((unsigned int)time(NULL));
 }
 
 ZombieEvent::~ZombieEvent(void) {
@@ -13,8 +11,7 @@ ZombieEvent::~ZombieEvent(void) {
 
 Zombie*	ZombieEvent::newZombie(std::string name) {
 	Zombie		*zomboy = new Zombie(name, this->_type);
-	zomboy->announce();
-	return	(zomboy);
+	return (zomboy);
 }
 
 void	ZombieEvent::setZombieType(std::string type) {
@@ -22,10 +19,20 @@ void	ZombieEvent::setZombieType(std::string type) {
 }
 
 void	ZombieEvent::randomChump(void) {
-	Zombie			*tmp;
-	std::string		str;
+	std::string		tab[10];
+	int				nbr;
 
-	str << "B" << "ob";
-	tmp = newZombie(str);
-	delete tmp;
+	tab[0] = "Avy";
+	tab[1] = "Bao";
+	tab[2] = "Lee";
+	tab[3] = "Dan";
+	tab[4] = "Lou";
+	tab[5] = "Ray";
+	tab[6] = "Rex";
+	tab[7] = "Sid";
+	tab[8] = "Taj";
+	tab[9] = "Yao";
+	nbr = rand() % 10;
+	Zombie			zomboy = Zombie(tab[nbr], this->_type);
+	zomboy.announce();
 }

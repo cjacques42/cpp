@@ -1,5 +1,4 @@
 #include "Zombie.hpp"
-#include <iostream>
 
 Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type) {
 	std::cout << "This Zombie " << name <<" is new." << std::endl;
