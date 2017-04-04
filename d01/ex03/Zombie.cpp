@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name, std::string type) : name(name), type(type) {
-	std::cout << "This Zombie " << name <<" is new." << std::endl;
+Zombie::Zombie(void) {
+	std::cout << "A Zombie is born." << std::endl;
 }
 
 Zombie::~Zombie(void) {
