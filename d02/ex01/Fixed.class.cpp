@@ -4,6 +4,16 @@ Fixed::Fixed(void) : _nbr(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(int const nb) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_nbr = nb << this->_fraction;
+}
+
+Fixed::Fixed(float const f) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_nbr = roundf(f * pow(2, this->_fraction));
+}
+
 Fixed::~Fixed(void) {
 	std::cout << "Destructor called" << std::endl;
 }
@@ -21,13 +31,24 @@ Fixed &Fixed::operator=(Fixed const & rhs) {
 }
 
 int Fixed::getRawBits( void ) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_nbr);
 }
 
 void Fixed::setRawBits( int const raw ) {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_nbr = raw;
+}
+
+float Fixed::toFloat( void ) const {
+	return ((float)(this->_nbr * pow(2, -(this->_fraction))));
+}
+
+int Fixed::toInt( void ) const {
+	return (this->_nbr >> this->_fraction);
+}
+
+std::ostream &operator<<(std::ostream &o, Fixed const &i) {
+	o << i.toFloat();
+	return (o);
 }
 
 int const Fixed::_fraction = 8;
