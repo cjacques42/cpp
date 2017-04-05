@@ -1,6 +1,16 @@
 #include "Brain.hpp"
 
-void	Brain::identify(void) {
-	std::cout << this << std::endl;
-	return ;
+
+Brain::Brain(void) {
+
+}
+
+Brain::~Brain(void) {
+
+}
+
+std::string	Brain::identify(void) const {
+	std::stringstream str;
+	str << this;
+	return (str.str());
 }

@@ -2,12 +2,15 @@
 # define BRAIN_HPP
 
 # include <iostream>
+#include <sstream>
 
 class Brain {
 
 public:
 
-void identify(void);
+Brain(void);
+~Brain(void);
+std::string identify(void) const;
 
 };
 

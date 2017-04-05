@@ -6,11 +6,13 @@
 class Human 
 {
 	public:
-		Brain brain;
-
 		Human(void);
-		Brain getBrain(void);
+		~Human(void);
+		Brain const &getBrain(void) const;
 		std::string identify(void);
+
+	private:
+		Brain const _brain;
 };
 
 #endif
