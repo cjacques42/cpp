@@ -3,9 +3,8 @@
 int		main(void) {
 	std::string		str = "HI THIS IS BRAIN";
 	std::string		&ref = str;
-	std::string		*ptr;
+	std::string		*ptr = &str;
 
-	ptr = &str;
 	std::cout << "Reference: " << *ptr << std::endl;
 	std::cout << "Pointer: " << ref << std::endl;
 	return (0);
