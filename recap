@@ -1,0 +1,56 @@
+this:
+instance de class courante
+this->foo = 42;
+this->bar();
+
+initialization list:
+Sample::Sample(char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3) {
+
+}
+
+const:
+public:
+int     qd;
+float const pi = 3.14; // Initialisation != Assignation
+or initialization list.
+
+void    bar(void) const;
+void    bar(void) const {
+    // assignation impossible
+}
+
+visibility:
+public        //accessible interieur et exterieur de la class
+private       //accessible depuis l'interieur
+    int   _privqteFoo;
+    void  _privateBar(void) {
+    }
+
+class vs struct:
+La structure est similaire, pas de public ou private
+struct -> scope par defaut public
+class -> scope par defaut prive
+
+Accessors:
+int getFoo() const;  //ne pas oublier const
+
+Comparisons:
+egalite physique
+egalite structurel
+
+Non member attributes and non member functions:
+Fonction au niveau de la class et non de l'instance
+static int  _nbInst;
+static n'est pas utilise lors de la definition
+impossible de faire appel a this: return Sample::staticVar;
+int     Sample::_nbInst = 0; // dans le .cpp
+
+pointers to members:
+int     Sample::*p = NULL; // pointeur sur un entier membre de la class Sample
+Le pointeur est lie a aucune instance
+instancep->*p = 42;
+void    (Sample::*f)(void) const; // pointeur sur fonction
+(instancep->*f)();
+
+initialization list: ++++++++++++++
+const ++++++++++++++
