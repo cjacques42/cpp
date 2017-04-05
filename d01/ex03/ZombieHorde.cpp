@@ -1,19 +1,9 @@
 #include "ZombieHorde.hpp"
 
 ZombieHorde::ZombieHorde(int N) : N(N) {
-	std::string		tab[10];
+	std::string		tab[10] = {"Avy", "Bao", "Lee", "Dan", "Lou", "Ray", "Rex", "Sid", "Taj", "Yao"};
 	int				nbr;
 
-	tab[0] = "Avy";
-	tab[1] = "Bao";
-	tab[2] = "Lee";
-	tab[3] = "Dan";
-	tab[4] = "Lou";
-	tab[5] = "Ray";
-	tab[6] = "Rex";
-	tab[7] = "Sid";
-	tab[8] = "Taj";
-	tab[9] = "Yao";
 	std::cout << "ZombieHorde: created" << std::endl;
 	this->_horde = new Zombie[N];
 	for (int i = 0; i < this->N; i++) {

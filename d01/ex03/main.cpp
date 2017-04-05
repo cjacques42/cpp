@@ -1,8 +1,7 @@
-#include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
 int		main() {
-	ZombieHorde		event = ZombieHorde(3);
+	ZombieHorde		event = ZombieHorde(4);
 
 	event.announce();
 	return (0);
