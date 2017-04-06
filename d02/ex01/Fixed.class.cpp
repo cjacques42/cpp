@@ -11,7 +11,7 @@ Fixed::Fixed(int const nb) {
 
 Fixed::Fixed(float const f) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_nbr = roundf(f * pow(2, this->_fraction));
+	this->_nbr = roundf(f * (float)(1 << this->_fraction));
 }
 
 Fixed::~Fixed(void) {
@@ -39,7 +39,7 @@ void Fixed::setRawBits( int const raw ) {
 }
 
 float Fixed::toFloat( void ) const {
-	return ((float)(this->_nbr * pow(2, -(this->_fraction))));
+	return (this->_nbr / (float)(1 << this->_fraction));
 }
 
 int Fixed::toInt( void ) const {
