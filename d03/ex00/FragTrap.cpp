@@ -38,11 +38,17 @@ void FragTrap::meleeAttack(std::string const &target) {
 }
 
 void FragTrap::takeDamage(unsigned int amount) {
-	if (this->hit_points < amount)
+	unsigned int damage;
+
+	if (this->armor_damage_reduction > amount)
+		damage = 0;
+	else
+		damage = amount - this->armor_damage_reduction;
+	if (this->hit_points < damage)
 		this->hit_points = 0;
 	else
-		this->hit_points -= amount;
-	std::cout << "FR4G-TP " << this->name << " takes " << amount << " points of damage ! HP: " << this->hit_points << std::endl;
+		this->hit_points -= damage;
+	std::cout << "FR4G-TP " << this->name << " takes " << amount << " points of damage, but he have " << this->armor_damage_reduction << " armor damage reduction ! HP: " << this->hit_points << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount) {
@@ -55,12 +61,13 @@ void FragTrap::beRepaired(unsigned int amount) {
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	unsigned int energy = 25;
+	int i = rand() % 6;
 	std::string tab[6] = {"Feint", "Spark", "Nuzzle", "Discharge", "Slam", "Thunderbolt"};
 
 	std::cout << "FR4G-TP " << this->name;
 	if (this->energy_points >= energy) {
 		this->energy_points -= energy;
-		std::cout << " uses " << tab[rand() % 6] << " attack on " << target << ". Energy: " << this->energy_points << std::endl;
+		std::cout << " uses " << tab[i] << " attack on " << target << ". Energy: " << this->energy_points << std::endl;
 		return;
 	}
 	std::cout << " want to attack " << target << " but is out of energy. Energy: " << this->energy_points << std::endl;

@@ -7,9 +7,9 @@ int		main(void) {
 	tmp.meleeAttack("a Cow");
 	tmp.takeDamage(80);
 	tmp.beRepaired(20);
-	tmp.takeDamage(45);
+	tmp.takeDamage(65);
 	FragTrap ptr(tmp);
-	tmp.beRepaired(150);
+	tmp.beRepaired(142);
 	tmp.vaulthunter_dot_exe("Harry Potter");
 	tmp.vaulthunter_dot_exe("Ron Weasley");
 	tmp.vaulthunter_dot_exe("Hermione Granger");
