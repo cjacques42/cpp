@@ -62,12 +62,12 @@ void Bureaucrat::signForm(Form &src) {
     }
 }
 
-void executeForm(Form const & src) {
+void Bureaucrat::executeForm(Form const & src) {
     try {
         src.execute(*this);
-        std::cout << this._name << " executes " << src.getName() << std::endl;
+        std::cout << this->_name << " executes " << src.getName() << std::endl;
     } catch (std::exception &e) {
-        std::cout << this._name << " cannot execute " << src.getName() << " because " << e.what() << std::endl;
+        std::cout << this->_name << " cannot execute " << src.getName() << " because " << e.what() << std::endl;
     }
 }
 
@@ -85,6 +85,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(Bureaucrat::GradeTooLowEx
 }
 
 Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(Bureaucrat::GradeTooLowException const &src) {
+	(void)src;
     return (*this);
 }
 
@@ -105,6 +106,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(Bureaucrat::GradeTooHig
 }
 
 Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(Bureaucrat::GradeTooHighException const &src) {
+	(void)src;
     return (*this);
 }
 

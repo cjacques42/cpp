@@ -26,6 +26,7 @@ Form::~Form( void )
 
 Form & Form::operator=(Form const & rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
@@ -39,12 +40,12 @@ bool Form::getIsSigned() const
 	return this->_isSigned;
 }
 
-int const Form::getGradeToSign() const
+int Form::getGradeToSign() const
 {
 	return this->_gradeToSign;
 }
 
-int const Form::getGradeToExec() const
+int Form::getGradeToExec() const
 {
 	return this->_gradeToExec;
 }
@@ -56,10 +57,10 @@ void Form::beSigned(Bureaucrat &src)
 	this->_isSigned = true;
 }
 
-void execute(Bureaucrat const & executor) const {
-	if (src.getGrade() > this->_gradeToExec)
+void Form::execute(Bureaucrat const & executor) const {
+	if (!this->_isSigned || executor.getGrade() > this->_gradeToExec)
 		throw Form::GradeTooLowException();
-	this->action();
+	this->actionForm();
 }
 
 std::ostream &operator<<(std::ostream &o, Form const &i) {
@@ -80,6 +81,7 @@ Form::GradeTooLowException::GradeTooLowException(Form::GradeTooLowException cons
 }
 
 Form::GradeTooLowException &Form::GradeTooLowException::operator=(Form::GradeTooLowException const &src) {
+	(void)src;
     return (*this);
 }
 
@@ -100,6 +102,7 @@ Form::GradeTooHighException::GradeTooHighException(Form::GradeTooHighException c
 }
 
 Form::GradeTooHighException &Form::GradeTooHighException::operator=(Form::GradeTooHighException const &src) {
+	(void)src;
     return (*this);
 }
 

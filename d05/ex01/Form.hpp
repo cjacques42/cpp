@@ -17,8 +17,8 @@ public:
 	Form & operator=( Form const & rhs );
 	std::string const getName()const;
 	bool getIsSigned()const;
-	int const getGradeToSign()const;
-	int const getGradeToExec()const;
+	int getGradeToSign()const;
+	int getGradeToExec()const;
 
 	void beSigned(Bureaucrat &);
 

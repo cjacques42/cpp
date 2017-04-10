@@ -1,6 +1,7 @@
 #ifndef RobotomyRequestForm_hpp
 #define RobotomyRequestForm_hpp
 
+# include "Form.hpp"
 # include <iostream>
 
 class RobotomyRequestForm : public Form
@@ -9,7 +10,7 @@ class RobotomyRequestForm : public Form
 public:
 	RobotomyRequestForm(  std::string );
 	RobotomyRequestForm( RobotomyRequestForm const & src );
-	~RobotomyRequestForm( void );
+	virtual ~RobotomyRequestForm( void );
 
 	RobotomyRequestForm & operator=( RobotomyRequestForm const & rhs );
 

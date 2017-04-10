@@ -23,6 +23,7 @@ RobotomyRequestForm::~RobotomyRequestForm( void )
 
 RobotomyRequestForm & RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
+	(void)rhs;
 	return *this;
 }
 

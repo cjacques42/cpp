@@ -26,6 +26,7 @@ Form::~Form( void )
 
 Form & Form::operator=(Form const & rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
@@ -39,12 +40,12 @@ bool Form::getIsSigned() const
 	return this->_isSigned;
 }
 
-int const Form::getGradeToSign() const
+int Form::getGradeToSign() const
 {
 	return this->_gradeToSign;
 }
 
-int const Form::getGradeToExec() const
+int Form::getGradeToExec() const
 {
 	return this->_gradeToExec;
 }
@@ -74,6 +75,7 @@ Form::GradeTooLowException::GradeTooLowException(Form::GradeTooLowException cons
 }
 
 Form::GradeTooLowException &Form::GradeTooLowException::operator=(Form::GradeTooLowException const &src) {
+	(void)src;
     return (*this);
 }
 
@@ -94,6 +96,7 @@ Form::GradeTooHighException::GradeTooHighException(Form::GradeTooHighException c
 }
 
 Form::GradeTooHighException &Form::GradeTooHighException::operator=(Form::GradeTooHighException const &src) {
+	(void)src;
     return (*this);
 }
 
