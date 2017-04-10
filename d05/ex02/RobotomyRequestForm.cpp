@@ -5,9 +5,8 @@ RobotomyRequestForm::RobotomyRequestForm( void )
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("RobotomyRequestForm", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("RobotomyRequestForm", 72, 45), _target(target)
 {
-	std::cout << "Makes some drilling noises, and tells us that " << target << " has been robotomized successfully 50% of the time. the rest of times, tells us it’s a failure." << std::endl;
 	return;
 }
 
@@ -25,4 +24,9 @@ RobotomyRequestForm::~RobotomyRequestForm( void )
 RobotomyRequestForm & RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
 {
 	return *this;
+}
+
+void RobotomyRequestForm::actionForm(void) const
+{
+	std::cout << "Makes some drilling noises, and tells us that " << this->_target << " has been robotomized successfully 50% of the time. the rest of times, tells us it’s a failure." << std::endl;
 }

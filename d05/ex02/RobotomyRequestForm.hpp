@@ -5,6 +5,7 @@
 
 class RobotomyRequestForm : public Form
 {
+
 public:
 	RobotomyRequestForm(  std::string );
 	RobotomyRequestForm( RobotomyRequestForm const & src );
@@ -13,7 +14,13 @@ public:
 	RobotomyRequestForm & operator=( RobotomyRequestForm const & rhs );
 
 private:
+	std::string _target;
+
 	RobotomyRequestForm( void );
+
+protected:
+	virtual void actionForm(void) const;
+
 };
 
 #endif

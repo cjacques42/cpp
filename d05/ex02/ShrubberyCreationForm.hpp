@@ -5,6 +5,7 @@
 
 class ShrubberyCreationForm : public Form
 {
+
 public:
 	ShrubberyCreationForm(  std::string );
 	ShrubberyCreationForm( ShrubberyCreationForm const & src );
@@ -13,7 +14,13 @@ public:
 	ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs );
 
 private:
+	std::string _target;
+
 	ShrubberyCreationForm( void );
+
+protected:
+	virtual void actionForm(void) const;
+
 };
 
 #endif

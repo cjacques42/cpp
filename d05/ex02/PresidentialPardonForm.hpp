@@ -5,6 +5,7 @@
 
 class PresidentialPardonForm : public Form
 {
+
 public:
 	PresidentialPardonForm( std::string );
 	PresidentialPardonForm( PresidentialPardonForm const & src );
@@ -13,7 +14,12 @@ public:
 	PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs );
 
 private:
+	std::string _target;
+
 	PresidentialPardonForm( void );
+
+protected:
+	virtual void actionForm(void) const;
 
 };
 

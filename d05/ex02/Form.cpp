@@ -56,6 +56,12 @@ void Form::beSigned(Bureaucrat &src)
 	this->_isSigned = true;
 }
 
+void execute(Bureaucrat const & executor) const {
+	if (src.getGrade() > this->_gradeToExec)
+		throw Form::GradeTooLowException();
+	this->action();
+}
+
 std::ostream &operator<<(std::ostream &o, Form const &i) {
 	if (i.getIsSigned()) {
         o << i.getName() << " is signed." << std::endl;

@@ -5,9 +5,8 @@ ShrubberyCreationForm::ShrubberyCreationForm( void )
 	return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : Form("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : Form("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "Create a file called " << target << "_shrubbery, and write ASCII trees inside it, in the current directory" << std::endl;
 	return;
 }
 
@@ -25,4 +24,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void )
 ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs )
 {
 	return *this;
+}
+
+void RobotomyRequestForm::actionForm(void) const
+{
+	std::cout << "Create a file called " << this->target << "_shrubbery, and write ASCII trees inside it, in the current directory" << std::endl;
 }
