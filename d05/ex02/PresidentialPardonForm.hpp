@@ -1,0 +1,20 @@
+#ifndef PresidentialPardonForm_hpp
+#define PresidentialPardonForm_hpp
+
+# include <iostream>
+
+class PresidentialPardonForm : public Form
+{
+public:
+	PresidentialPardonForm( std::string );
+	PresidentialPardonForm( PresidentialPardonForm const & src );
+	~PresidentialPardonForm( void );
+
+	PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs );
+
+private:
+	PresidentialPardonForm( void );
+
+};
+
+#endif
