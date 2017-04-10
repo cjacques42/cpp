@@ -2,10 +2,10 @@
 #include <iostream>
 
 int main() {
-    int i = -1;
+    int i = -2;
     Bureaucrat *tmp;
 
-    while (i < 3) {
+    while (i < 4) {
         try {
             tmp = new Bureaucrat("--><--", i);
             std::cout << *tmp;
@@ -16,9 +16,9 @@ int main() {
         i++;
     }
     std::cout << std::endl << "Decrease : " << std::endl;
-    i = 145;
+    i = 147;
     tmp = new Bureaucrat("DeaCreaSe", i);
-    while (i <= 151) {
+    while (i <= 152) {
         try {
             tmp->decreaseGrade();
             std::cout << *tmp;
