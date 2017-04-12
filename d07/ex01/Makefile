@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = whatever
+NAME = iter
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
 OBJ_PATH = obj/
 SHELL = /bin/bash
 
-SRC_NAME =	whatever.cpp\
+SRC_NAME =	iter.cpp\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
