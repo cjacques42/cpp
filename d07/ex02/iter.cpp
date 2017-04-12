@@ -17,7 +17,7 @@ void	iter(T *array, N len, F function) {
 
 int		main() {
 	char	tab1[] = {'a', 'b', 'c', 'd', 'e'};
-	int		tab2[] = {1, 2, 3, 4, 5, 6, 7};
+	char	tab2[] = {1, 2, 3, 4, 5, 6, 7};
 
 	iter(tab1, 5, &printChar);
 	iter(tab2, 7, &printInt);
