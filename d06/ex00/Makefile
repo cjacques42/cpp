@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = convert
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
 OBJ_PATH = obj/
